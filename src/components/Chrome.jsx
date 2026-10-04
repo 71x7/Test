@@ -40,8 +40,8 @@ export function Navbar({ onCategory }) {
   return (
     <header className={`nav-wrap ${scrolled ? 'is-scrolled' : ''}`}>
       <nav className="navbar container" aria-label="Principal">
-        <a href="/" className="brand">
-          <img src="../../assets/img/logo.jpg" alt="" width="32" height="32" />
+        <a href="./" className="brand">
+          <img src="../../../assets/img/logo.jpg" alt="" width="32" height="32" />
           <span>synthetix<em>.host</em></span>
         </a>
 
@@ -74,13 +74,13 @@ export function Navbar({ onCategory }) {
           <div className="nav-auth desktop-only">
             {user ? (
               <>
-                <a href="/dashboard/" className="btn btn-ghost btn-sm"><span className="dot dot--live" /> {username}</a>
-                <a href="/dashboard/" className="btn btn-primary btn-sm">Panel</a>
+                <a href="./dashboard/" className="btn btn-ghost btn-sm"><span className="dot dot--live" /> {username}</a>
+                <a href="./dashboard/" className="btn btn-primary btn-sm">Panel</a>
               </>
             ) : (
               <>
-                <a href="/login/" className="btn btn-ghost btn-sm">Iniciar sesión</a>
-                <a href="/register/" className="btn btn-primary btn-sm">Registrarse</a>
+                <a href="./login/" className="btn btn-ghost btn-sm">Iniciar sesión</a>
+                <a href="./register/" className="btn btn-primary btn-sm">Registrarse</a>
               </>
             )}
           </div>
@@ -100,7 +100,7 @@ export function MobileDrawer({ onCategory }) {
   const username = user ? user.user_metadata?.username || user.email.split('@')[0] : null
   const logout = async () => {
     try {
-      const { supabaseClient } = await import('../../assets/js/supabaseClient.js')
+      const { supabaseClient } = await import('../../../assets/js/supabaseClient.js')
       await supabaseClient.auth.signOut()
     } catch {}
     window.location.reload()
@@ -110,7 +110,7 @@ export function MobileDrawer({ onCategory }) {
       <div className={`overlay ${menuOpen ? 'is-open' : ''}`} onClick={close} />
       <aside className={`drawer ${menuOpen ? 'is-open' : ''}`} aria-hidden={!menuOpen}>
         <div className="drawer__head">
-          <a href="/" className="brand"><img src="../../assets/img/logo.jpg" alt="" width="28" height="28" /><span>Synthetix Host</span></a>
+          <a href="./" className="brand"><img src="../../../assets/img/logo.jpg" alt="" width="28" height="28" /><span>Synthetix Host</span></a>
           <button className="icon-btn" onClick={close} aria-label="Cerrar menú"><Icon name="x" size={19} /></button>
         </div>
 
@@ -139,13 +139,13 @@ export function MobileDrawer({ onCategory }) {
         <div className="drawer__foot">
           {user ? (
             <>
-              <a href="/dashboard/" className="btn btn-ghost btn-wide"><Icon name="dashboard" size={17} /> Mi Panel ({username})</a>
+              <a href="./dashboard/" className="btn btn-ghost btn-wide"><Icon name="dashboard" size={17} /> Mi Panel ({username})</a>
               <button className="btn btn-danger btn-wide" onClick={logout}><Icon name="logout" size={17} /> Cerrar sesión</button>
             </>
           ) : (
             <>
-              <a href="/login/" className="btn btn-ghost btn-wide">Iniciar sesión</a>
-              <a href="/register/" className="btn btn-primary btn-wide">Registrarse</a>
+              <a href="./login/" className="btn btn-ghost btn-wide">Iniciar sesión</a>
+              <a href="./register/" className="btn btn-primary btn-wide">Registrarse</a>
             </>
           )}
         </div>
@@ -251,7 +251,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <a href="/" className="brand"><img src="../../assets/img/logo.jpg" alt="" width="32" height="32" /><span>synthetix<em>.host</em></span></a>
+          <a href="./" className="brand"><img src="../../../assets/img/logo.jpg" alt="" width="32" height="32" /><span>synthetix<em>.host</em></span></a>
           <p>Infraestructura Cloud &amp; Gaming. Aloja tus redes de Minecraft, VPS Cloud y Bots de Discord con rendimiento extremo.</p>
         </div>
         <div>
@@ -264,9 +264,9 @@ export function Footer() {
         </div>
         <div>
           <h4>Cuenta</h4>
-          <a href="/login/">Iniciar sesión</a>
-          <a href="/register/">Registrarse</a>
-          <a href="/dashboard/">Panel de cliente</a>
+          <a href="./login/">Iniciar sesión</a>
+          <a href="./register/">Registrarse</a>
+          <a href="./dashboard/">Panel de cliente</a>
           <a href={PANEL_URL} target="_blank" rel="noopener">panel.synthetixhost.lol</a>
         </div>
         <div>
