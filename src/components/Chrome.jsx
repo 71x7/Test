@@ -41,7 +41,7 @@ export function Navbar({ onCategory }) {
     <header className={`nav-wrap ${scrolled ? 'is-scrolled' : ''}`}>
       <nav className="navbar container" aria-label="Principal">
         <a href="/" className="brand">
-          <img src="/assets/img/logo.jpg" alt="" width="32" height="32" />
+          <img src="../../assets/img/logo.jpg" alt="" width="32" height="32" />
           <span>synthetix<em>.host</em></span>
         </a>
 
@@ -100,7 +100,7 @@ export function MobileDrawer({ onCategory }) {
   const username = user ? user.user_metadata?.username || user.email.split('@')[0] : null
   const logout = async () => {
     try {
-      const { supabaseClient } = await import('/assets/js/supabaseClient.js')
+      const { supabaseClient } = await import('../../assets/js/supabaseClient.js')
       await supabaseClient.auth.signOut()
     } catch {}
     window.location.reload()
@@ -110,7 +110,7 @@ export function MobileDrawer({ onCategory }) {
       <div className={`overlay ${menuOpen ? 'is-open' : ''}`} onClick={close} />
       <aside className={`drawer ${menuOpen ? 'is-open' : ''}`} aria-hidden={!menuOpen}>
         <div className="drawer__head">
-          <a href="/" className="brand"><img src="/assets/img/logo.jpg" alt="" width="28" height="28" /><span>Synthetix Host</span></a>
+          <a href="/" className="brand"><img src="../../assets/img/logo.jpg" alt="" width="28" height="28" /><span>Synthetix Host</span></a>
           <button className="icon-btn" onClick={close} aria-label="Cerrar menú"><Icon name="x" size={19} /></button>
         </div>
 
@@ -251,7 +251,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <a href="/" className="brand"><img src="/assets/img/logo.jpg" alt="" width="32" height="32" /><span>synthetix<em>.host</em></span></a>
+          <a href="/" className="brand"><img src="../../assets/img/logo.jpg" alt="" width="32" height="32" /><span>synthetix<em>.host</em></span></a>
           <p>Infraestructura Cloud &amp; Gaming. Aloja tus redes de Minecraft, VPS Cloud y Bots de Discord con rendimiento extremo.</p>
         </div>
         <div>

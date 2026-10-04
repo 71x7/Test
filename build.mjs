@@ -14,7 +14,7 @@ const options = {
   target: ['es2020'],
   jsx: 'automatic',
   loader: { '.svg': 'text' },
-  external: ['/assets/*'],
+  external: ['assets/*'],
   define: { 'process.env.NODE_ENV': '"production"' },
   logLevel: 'info'
 }

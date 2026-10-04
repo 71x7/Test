@@ -35,7 +35,7 @@ export function StoreProvider({ children }) {
     let alive = true
     ;(async () => {
       try {
-        const { supabaseClient } = await import('/assets/js/supabaseClient.js')
+        const { supabaseClient } = await import('../assets/js/supabaseClient.js')
         const { data } = await supabaseClient.auth.getSession()
         if (alive && data?.session?.user) setUser(data.session.user)
         const res = supabaseClient.auth.onAuthStateChange((_e, session) => alive && setUser(session?.user || null))
